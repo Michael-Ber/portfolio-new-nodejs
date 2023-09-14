@@ -3,7 +3,6 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 
 import mailerRouter from './routes/mailer.js';
-
 dotenv.config();
 
 const app = express();
@@ -15,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 //ROUTES
-app.use("/send_mail", mailerRouter)
+app.use("/", mailerRouter);
 
 async function start() {
     try {
